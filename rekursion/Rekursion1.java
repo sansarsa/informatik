@@ -148,13 +148,21 @@ public class Rekursion1 extends JFrame {
 	// Aufgabe 1
 
 	public int fakultaet(int n) {
-		return n;	// muss geändert werden!
+		if(n == 0) {
+			return 1;
+		} else {
+		return n * fakultaet(n - 1);
+		}
 	}
 	
 	// Aufgabe 2
 
 	public int zahlenfolge(int n) {
-		return n;	// muss geändert werden!
+		if(n == 0) {
+			return 1;
+		} else {
+			return 2 * zahlenfolge(n - 1);
+		}
 	}
 	
 	// Aufgabe 3
