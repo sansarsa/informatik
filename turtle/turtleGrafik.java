@@ -203,32 +203,82 @@ public class TurtleGrafik extends JFrame {
 	
 	private void aufg6() {
 		// Aufgabe 6
-		
+		int breite = 15;
+		for (int i = 0; i < 64; i++) {
+			t.vor(breite);
+			t.drehen(90);
+			breite = breite + breite * 1 / 15;
+		}
 	}
 	
+	public void quadrat(int breite) // rechts herum drehen
+	{
+		int i = 0;
+		while (i < 4) {
+			t.vor(breite);
+			t.drehen(-90);
+			i++;
+		}
+	}
+
 	private void aufg7() {
 		// Aufgabe 7
-		
+		int breite = 4;
+		for (int i = 0; i < 22; i++) {
+			quadrat(breite);
+			breite = breite + breite * 1 / 4;
+
+		}
+	}
+	
+	public void sechseck() {
+		int i = 0;
+		while (i < 6) {
+			t.vor(100);
+			t.drehen(60);
+			i++;
+		}
 	}
 	
 	private void aufg8() {
 		// Aufgabe 8
-		
+		for (int i = 0; i < 18; i++) {
+			sechseck();
+			t.drehen(20);
+		}
 	}
 	
+	public void dreieck() {
+		for (int i = 0; i < 3; i++) {
+			t.vor(100);
+			t.drehen(120);
+		}
+	}
+
 	private void aufg9() {
 		// Aufgabe 9
-		
+		for (int i = 0; i < 6; i++) {
+			dreieck();
+			t.drehen(60);
+		}
 	}
 	
 	private void aufg10() {
 		// Aufgabe 10
-		
+		t.drehen(-30);
+		for (int i = 0; i < 4; i++) {
+			dreieck();
+			t.drehen(90);
+		}
 	}
 	
 	private void aufg11() {
 		// Aufgabe 11
-		
+		for (int i = 0; i < 6; i++) {
+			dreieck();
+			t.vor(100);
+			t.drehen(-60);
+		}
 	}
 	
 	/**
