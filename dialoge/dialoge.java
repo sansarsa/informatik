@@ -1,3 +1,6 @@
+package dialoge;
+import javax.swing.*;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -98,24 +101,93 @@ public class Dialoge extends JFrame {
 		contentPane.add(btnAufg8);
 	}
 
+	
+	public boolean bis100(int zahl) {
+		if(zahl >= 1 && zahl <= 100) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	private void aufg1() {
 		// Aufgabe 1
-		
+		String text = JOptionPane.showInputDialog("Gib eine Zahl ein:");
+		int zahl = Integer.parseInt(text);
+		if(bis100(zahl)) {
+			JOptionPane.showMessageDialog(this, "die Zahl liegt zwischen 1 bis 100!");
+			} else {
+				JOptionPane.showMessageDialog(this, "die Zahl liegt NICHT zwischen 1 bis 100!");
+			}
+	}
+	
+	public boolean zwischen10bis20(double zahl) {
+		if(zahl < 10 || zahl > 20) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 	
 	private void aufg2() {
 		// Aufgabe 2
-		
+		String text = JOptionPane.showInputDialog("Gib eine Zahl ein:");
+		double zahl = Double.parseDouble(text);
+		if(zwischen10bis20(zahl)) {
+			JOptionPane.showMessageDialog(this, "die Zahl liegt zwischen 10 bis 20!");
+			} else {
+				JOptionPane.showMessageDialog(this, "die Zahl liegt NICHT zwischen 10 bis 20!");
+			}
+	}
+	
+	public boolean geradezahl(int zahl) {
+		while(zahl > 0) {
+			zahl = zahl - 2;
+		}
+		if(zahl == 0) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	private void aufg3() {
 		// Aufgabe 3
-		
+		String text = JOptionPane.showInputDialog("Gib eine Zahl ein:");
+		int zahl = Integer.parseInt(text);
+		if(geradezahl(zahl)) {
+			JOptionPane.showMessageDialog(this, "die Zahl ist eine gerade Zahl!");
+		} else {
+			JOptionPane.showMessageDialog(this, "die Zahl ist keine gerade Zahl!");
+		}
+	}
+	
+	public int notenumwandlung(int noten) {
+		if(noten > 15 || noten < 0) {
+			return -1;
+		}
+		int count = 0;
+		while(noten > 0) {
+			noten = noten - 3;
+			count ++;
+		}
+		count = 6 - count;
+		noten  = count;
+		return noten;
 	}
 	
 	private void aufg4() {
 		// Aufgabe 4
-		
+		while(true) {
+			String text = JOptionPane.showInputDialog("Gib eine Zahl ein:");
+			int zahl = Integer.parseInt(text);
+			zahl = notenumwandlung(zahl);
+			if(zahl == -1) {
+				JOptionPane.showMessageDialog(this, "Falsche Eingabe!");
+			} else {
+				JOptionPane.showMessageDialog(this, "deine Noten: " + zahl);
+			}
+		}
 	}
 	
 	private void aufg5() {
