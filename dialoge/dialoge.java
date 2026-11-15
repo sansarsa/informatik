@@ -224,12 +224,25 @@ public class Dialoge extends JFrame {
         zeile2 = zeile2 - 3;
     }
 }
-
-
 	
-	private void aufg6() {
-		// Aufgabe 6
-		
+		private void aufg6() {
+		// Aufgabe 6 !!!NICHT FERTIG!!! (NaN)
+		String wertp = JOptionPane.showInputDialog("Wert von p:");
+		String wertq = JOptionPane.showInputDialog("Wert von q:");
+		double wertumwp = Double.parseDouble(wertp);
+		double wertumwq = Double.parseDouble(wertq);
+		double teilohnewurzel = -1 * wertumwp / 2;
+		double wertwurzel = Math.sqrt(Math.pow(wertumwp / 2, 2) - wertumwq);
+		double wertx1 = teilohnewurzel + wertwurzel;
+		double wertx2 = teilohnewurzel - wertwurzel;
+		if(wertwurzel < 0) {
+			JOptionPane.showMessageDialog(this, "keine Lösung");
+		} else if(wertwurzel == 0) {
+			JOptionPane.showMessageDialog(this, teilohnewurzel);
+		} else {
+			JOptionPane.showMessageDialog(this, "x¹: " + wertx1);
+			JOptionPane.showMessageDialog(this, "x²: " + wertx2);
+		}
 	}
 	
 	private void aufg7() {
