@@ -190,10 +190,42 @@ public class Dialoge extends JFrame {
 		}
 	}
 	
-	private void aufg5() {
-		// Aufgabe 5
 		
-	}
+	private void aufg5() {
+    	// Aufgabe 5
+    	int zeile1 = 5;
+    	int zeile2 = 7;
+
+    	for (int a = 0; a < 3; a++) {
+        	for (int b = 0; b < 3; b++) {
+
+            	String text = JOptionPane.showInputDialog(
+                	"Löse die Aufgabe: " + zeile1 + " * " + zeile2
+            );
+
+            int zahl = Integer.parseInt(text);
+
+            while (zahl != zeile1 * zeile2) {
+                JOptionPane.showMessageDialog(this, "Falsche Eingabe!");
+
+                text = JOptionPane.showInputDialog(
+                    "Löse die Aufgabe: " + zeile1 + " * " + zeile2
+                );
+
+                zahl = Integer.parseInt(text);
+            }
+
+            JOptionPane.showMessageDialog(this, "Korrekte Eingabe!");
+
+            zeile2++;
+        }
+
+        zeile1++;
+        zeile2 = zeile2 - 3;
+    }
+}
+
+
 	
 	private void aufg6() {
 		// Aufgabe 6
