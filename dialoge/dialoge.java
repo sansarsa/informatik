@@ -248,6 +248,23 @@ public class Dialoge extends JFrame {
 	private void aufg7() {
 		// Aufgabe 7
 		
+    	String gewichtinstring = JOptionPane.showInputDialog("Gewicht in kg: ");
+    	String größeinstring = JOptionPane.showInputDialog("Größe in m: ");
+
+    	double gewicht = Double.parseDouble(gewichtinstring);
+    	double größe = Double.parseDouble(größeinstring);
+
+    	double bmiwert = gewicht / (Math.pow(größe, 2));
+
+    	JOptionPane.showMessageDialog(this, bmiwert);
+
+    	if (bmiwert < 18.5) {
+        	JOptionPane.showMessageDialog(this, "Untergewicht");
+    	} else if (bmiwert > 25) {
+        JOptionPane.showMessageDialog(this, "Übergewicht");
+    	} else {
+        JOptionPane.showMessageDialog(this, "Normalgewicht");
+    	}
 	}
 	
 	private void aufg8() {
