@@ -256,7 +256,7 @@ public class Dialoge extends JFrame {
 		            " Niedersachsen-Ticket ",
 		            JOptionPane.DEFAULT_OPTION,
 		            JOptionPane.QUESTION_MESSAGE,
-		            new ImageIcon("images/Bild_09-data.png"),
+		            new ImageIcon("images/db.png"),
 		            options,
 		            options[0]
 				);
@@ -265,16 +265,30 @@ public class Dialoge extends JFrame {
 				break;
 			}
 			
-			String eingabe = JOptionPane.showInputDialog("Anzahl der Personen: ");
+			String eingabe = (String) JOptionPane.showInputDialog(
+					null,
+					"Anzahl der Personen: ",
+					" Niedersachsen-Ticket",
+					JOptionPane.QUESTION_MESSAGE,
+					new ImageIcon("images/people.png"),
+					null,
+					""
+					);
 			int anzahl = Integer.parseInt(eingabe);
+			
+			double preisProPerson = switch (auswahl) {
+				case 1 -> Groningen(anzahl);
+				case 2 -> Ostharz(anzahl);
+				default -> Standard(anzahl);
+			};
 			
 			String ticket = 
 				    "╔══════════════════════════╗\n" +
 				    "       DEIN TICKET         \n" +
 				    "╠══════════════════════════╣\n" +
 				    " Version: " + options[auswahl] + "\n" +
-				    " Personen: " + anzahl + "\n" +
-				    " Preis pro Person: " + Standard(anzahl) + " €\n" +
+				    " Passagiere: " + anzahl + "\n" +
+				    " Preis pro Person: " + preisProPerson + " €\n" +
 				    "╚══════════════════════════╝";
 			
 			if(auswahl == 0) {
