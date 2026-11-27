@@ -1,3 +1,4 @@
+package rekursion;
 import java.awt.EventQueue;
 
 import javax.swing.JButton;
@@ -30,23 +31,40 @@ public class Rekursion1 extends JFrame {
 	// Aufgabe 1
 
 	public int fakultaet(int n) {
-		return n; // muss geändert werden!
+		if(n > 1) {
+			return n * fakultaet(n - 1);
+		} else {
+		return n;
+		}
 	}
 
 	// Aufgabe 2
 
 	public int zahlenfolge(int n) {
-		return n; // muss geändert werden!
+		if(n == 0) {
+			return 1;
+		} else {
+			return 2 * zahlenfolge(n - 1);
+		}
 	}
 
 	// Aufgabe 3
 
 	public double breite(int format) {
-		return 0.0; // muss geändert werden!
+		if(format == 0) {
+			return 84.1;
+		} else {
+			return hoehe(format - 1) / 2;
+		}
 	}
 
 	public double hoehe(int format) {
-		return 0.0; // muss geändert werden!
+		if(format == 0) {
+			return 118.9;
+		} else {
+			return breite(format - 1);
+			
+		}
 	}
 
 	public int getEingabe(JTextField tf) {
